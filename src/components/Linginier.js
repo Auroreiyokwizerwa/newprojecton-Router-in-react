@@ -4,20 +4,13 @@ import Cards from './Cards';
 import {useState} from 'react';
 import AddNewItem from './AddNewItem';
 
-function Linginier() {
+function Linginier(props) {
 
-const[items, setItems]=useState([]);
-const fetchProducts = async () =>{
-  const response =await axios.get("https://dummyjson.com/products?limit=6");
-  setItems(response.data.products);
-}
-if(items.length<1){
-  fetchProducts();
-}
+
   return (
     <section>
       {
-        items.map((item,index)=>(
+       props.data.map((item,index)=>(
           <Cards key={index} item={item}/>
         ))
       }

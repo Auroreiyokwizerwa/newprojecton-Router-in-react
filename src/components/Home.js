@@ -1,14 +1,14 @@
 import React from 'react'
 import Navbar from './Navbar';
+import Linginier from './Linginier';
 import { Outlet } from 'react-router-dom';
 
 
-function Home() {
+function Home(props) {
   return (
     <>
-     <Navbar/>
-     <Outlet/>
-
+   
+     <Linginier data ={props.data}/>
     </>
   )
 }
